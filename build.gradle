@@ -10,5 +10,15 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    //Esta libreria se usa para compilar
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+
+    //Esta libreria es para usar el test compile
+    testCompile group: 'org.testng', name: 'testng', version: '7.0.0'
+
 }
+
+    //Con este codigo le decimos al proyecto que estamos utilizando testNG y que trate de reconocer los tests
+    test {
+        useTestNG()
+    }
