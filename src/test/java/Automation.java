@@ -3,18 +3,27 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class Automation {
 
-    @Test
-    public void testUno() throws InterruptedException {
+    private  WebDriver driver;
+    @BeforeMethod
+
+    public void setUp(){
 
         System.setProperty("webdriver.chrome.driver", "D:\\Test_Capacitacion\\BDD-Cucumber_Gerkhin\\Drivers (ChromeDriver)\\chromedriver87.0.4280.88\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+        driver = new ChromeDriver();
 
         //Abre la pagina sobre la que vamos a hacer las pruebas
         driver.get("http://automationpractice.com/index.php");
+    }
+
+    @Test
+    public void testUno() throws InterruptedException {
+
 
         WebElement txtBusqueda = driver.findElement(By.id("search_query_top"));
         txtBusqueda.sendKeys("blouse");
@@ -30,10 +39,13 @@ public class Automation {
         btnList.click();
 
         WebElement lblPrecio = driver.findElement(By.cssSelector("div[class='content_price col-xs-5 col-md-12']"));
-                Assert.assertEquals(lblPrecio.getText(),"$27.00");
+        Assert.assertEquals(lblPrecio.getText(), "$27.00");
 
         Thread.sleep(3000);
 
+        }
+    @AfterMethod
+    public void tearDown(){
         driver.quit();
 
     }
