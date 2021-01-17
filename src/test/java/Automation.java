@@ -6,6 +6,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pageobjects.ResultsPage;
+import pageobjects.SearchPage;
 
 public class Automation {
 
@@ -24,22 +26,16 @@ public class Automation {
     @Test
     public void testUno() throws InterruptedException {
 
+        SearchPage search = new SearchPage(driver);
+        search.writeSearch("blouse");
+        search.clickSearch();
 
-        WebElement txtBusqueda = driver.findElement(By.id("search_query_top"));
-        txtBusqueda.sendKeys("blouse");
+        ResultsPage results = new ResultsPage(driver);
+        results.clickList();
 
-        WebElement btnBuscar = driver.findElement(By.cssSelector("button[name='submit_search']"));
-        btnBuscar.click();
+        results.selectSort("Price: Lowest first");
 
-        //WebElement lblMensaje = driver.findElement(By.cssSelector("p.alert.alert-warning"));
-
-        //Assert.assertEquals(lblMensaje.getText(),"No results were found for your search \"jeans\"");
-
-        WebElement btnList = driver.findElement(By.cssSelector("i[class='icon-th-list']"));
-        btnList.click();
-
-        WebElement lblPrecio = driver.findElement(By.cssSelector("div[class='content_price col-xs-5 col-md-12']"));
-        Assert.assertEquals(lblPrecio.getText(), "$27.00");
+        Assert.assertEquals(results.getPrice(), "$27.00");
 
         Thread.sleep(3000);
 
