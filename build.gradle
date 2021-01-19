@@ -15,6 +15,9 @@ dependencies {
 
     //Esta libreria es para usar el test compile
     testCompile group: 'org.testng', name: 'testng', version: '7.0.0'
+    compile group: 'info.cukes', name: 'cucumber-java', version:'1.2.5'
+    compile group: 'info.cukes', name: 'cucumber-testng', version:'1.2.5'
+
 
 }
 

@@ -3,7 +3,7 @@
 <suite name="Regression Suite" parallel="false">
     <test name="Search Products">
         <classes>
-            <class name="Automation"/>
+            <class name="runners.TestRunner"/>
         </classes>
     </test>
 </suite>

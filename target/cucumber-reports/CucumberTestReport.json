@@ -1,0 +1,104 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4784858800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SearchProductSteps.setUp()"
+            }
+          }
+        ],
+        "line": 6,
+        "name": "Busqueda exitosa de producto",
+        "description": "Este escenario consiste en realizar una busqueda\r\nque retorne al menos un producto como resultado.",
+        "id": "busqueda-de-productos;busqueda-exitosa-de-producto",
+        "after": [
+          {
+            "result": {
+              "duration": 1071979500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SearchProductSteps.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4437483300,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "El cliente se encuentra en la pagina de busqueda",
+            "match": {
+              "location": "SearchProductSteps.elClienteSeEncuentraEnLaPaginaDeBusqueda()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2951174700,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "realice la busqueda de productos con el termino \"blouse\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "blouse",
+                  "offset": 49
+                }
+              ],
+              "location": "SearchProductSteps.realiceLaBusquedaDeProductosConElTermino(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 99975600,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "cambia la visualizacion de resultados a modo lista",
+            "match": {
+              "location": "SearchProductSteps.cambiaLaVisualizacionDeResultadosAModoLista()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 53665400,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "se muestra el producto con el precio \"$27.00\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "$27.00",
+                  "offset": 38
+                }
+              ],
+              "location": "SearchProductSteps.seMuestraElProductoConElPrecio(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Busqueda de Productos",
+    "description": "Esta caracteristica permite a los clientes realizar busquedas de\r\nproductos que desean comprar en la tienda virtual\r\nSe presenta informacion como precio, stock, colores.",
+    "id": "busqueda-de-productos",
+    "keyword": "Feature",
+    "uri": "SearchProduct.feature"
+  }
+]
